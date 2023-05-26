@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  php:
+    image: php
+    volumes:
+      - .:/app
+    entrypoint: '/app/artisan'
+    ports:
+      - 8000:8000
+    expose:
+      - 8000
+    command: 'serve --host=0.0.0.0 --port=8000'
